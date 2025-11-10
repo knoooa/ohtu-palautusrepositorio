@@ -1,5 +1,6 @@
-import requests
-from player import Player
+"""moduuli pääfunktiolle"""
+#import requests
+#from player import Player
 from player_reader import PlayerReader
 from player_stats import PlayerStats
 from rich.console import Console
@@ -7,6 +8,7 @@ from rich.table import Table
 
 
 def main():
+    """funktio sovellukselle"""
     console = Console()
     #response = requests.get(url).json()
     #print("JSON-muotoinen vastaus:")
@@ -33,12 +35,10 @@ def main():
     table.add_column("Maalit", justify="right", style="green")
     table.add_column("Syötöt", justify="right", style="green")
     table.add_column("Pisteet", justify="right", style="bold white")
-
     for p in players:
         table.add_row(p.name, p.team, p.nationality, str(p.goals), str(p.assists), str(p.points))
 
     console.print(table)
-    
 
 if __name__ == "__main__":
     main()
