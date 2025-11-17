@@ -28,6 +28,13 @@ Open And Configure Browser
     END
     Open Browser  browser=${BROWSER}  options=${options}
 
+
+Register Page Should Be Open
+    Title Should Be    Register
+    
+Go To Starting Page
+    Go To    ${HOME_URL}
+
 Login Page Should Be Open
     Title Should Be  Login
 
