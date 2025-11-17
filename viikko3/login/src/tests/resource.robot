@@ -31,7 +31,7 @@ Open And Configure Browser
 
 Register Page Should Be Open
     Title Should Be    Register
-    
+
 Go To Starting Page
     Go To    ${HOME_URL}
 
@@ -44,3 +44,26 @@ Main Page Should Be Open
 Go To Login Page
     Go To  ${LOGIN_URL}
 
+Set Username
+    [Arguments]  ${username}
+    Input Text    id=username    ${username}
+
+Set Password
+    [Arguments]  ${password}
+    Input Password    id=password    ${password}
+
+Set Password Confirmation
+    [Arguments]  ${password}
+    Input Password    id=password_confirmation    ${password}
+
+User Should See Error Message
+    [Arguments]  ${message}
+    Page Should Contain    ${message}
+
+Go To Register Page
+    Go To    http://localhost:5001/register
+    Wait Until Element Is Visible    id=username    5s
+
+Reset Application Create User And Go To Register Page
+    Reset Application
+    Go To Register Page
