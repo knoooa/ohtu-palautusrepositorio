@@ -17,6 +17,13 @@ Login With Incorrect Password
     Click Button  Login
     Login Should Fail With Message  Invalid username or password
 
+Login With Nonexistent Username
+    Set Username  nonexistentuser
+    Set Password  somepassword
+    Click Button  Login
+    Login Should Fail With Message  Invalid username or password
+
+
 *** Keywords ***
 Login Should Succeed
     Main Page Should Be Open
@@ -28,14 +35,18 @@ Login Should Fail With Message
 
 Set Username
     [Arguments]  ${username}
-    Input Text  username  ${username}
+    Wait Until Element Is Visible    id=username    10s
+    Input Text      id=username      ${username}
+
 
 Set Password
     [Arguments]  ${password}
-    Input Password  password  ${password}
+    Wait Until Element Is Visible    id=password    10s
+    Input Password  id=password      ${password}
 
-*** Keywords ***
+
 Reset Application Create User And Go To Login Page
     Reset Application
     Create User  kalle  kalle123
     Go To Login Page
+
