@@ -1,0 +1,5 @@
+copilot havaitsi hyvin, millaisia muutoksia koodiin oli tehty: se oli refakturoitu pienempiin funktioihin alkuperäisestä if- ja else-lauseita täynnä olleesta get_scores-funktiosta. Lisäksi se osasi kertoa, että tämä parantaa koodin luettavuutta ja ylläpitoa.
+
+Suurin osa copilotin havaitsemista muutoksista liittyi ylimääräisiin väleihin ja riveihin yms koodin siistimiseen. Yksi muutos koski kuitenkin pientä rakenteellistakin muutosta, jossa SCORES-lista olisi määritelty luokkatasolla, niin ettei sitä luotaisi uudelleen joka get_score-kutsun yhteydessä.
+
+Copilotin katselmointi oli siis varsin hyödyllinen, sillä se havaitsi automaattisesti pienet muutokset koodin siistimiseksi, mitkä saattavat jäädä laiskalta ihmiseltä tekemättä. Lisäksi se ehdottelee jonkin verran myös rakenteellisia muutoksia koodiin, mikä on myös ihan hyödyllistä. Pelkän copilotin varaan ei kuitenkaan kannata jättää koko katselmointia, vaan toisen ihmisen on hyvä tarkistaa nämä muutokset huolellisesti ennen niiden hyväksymistä sekä tarkistaa myös muu koodi itse.
